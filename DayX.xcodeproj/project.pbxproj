@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E50FACC1A7B277A007505D5 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E50FACB1A7B277A007505D5 /* Stack.m */; };
+		2E50FACF1A7B279E007505D5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E50FACD1A7B279E007505D5 /* Model.xcdatamodeld */; };
+		2E50FAD11A7B27FB007505D5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E50FAD01A7B27FB007505D5 /* CoreData.framework */; };
 		2E60F2861A6AEE6300C6A78B /* DXListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E60F2851A6AEE6300C6A78B /* DXListViewController.m */; };
 		2E60F2891A6AEE8D00C6A78B /* DXListTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E60F2881A6AEE8D00C6A78B /* DXListTableViewDataSource.m */; };
 		2E60F28D1A6AF1B400C6A78B /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E60F28C1A6AF1B400C6A78B /* Entry.m */; };
@@ -38,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E50FACA1A7B277A007505D5 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		2E50FACB1A7B277A007505D5 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		2E50FACE1A7B279E007505D5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		2E50FAD01A7B27FB007505D5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		2E60F2841A6AEE6300C6A78B /* DXListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXListViewController.h; sourceTree = "<group>"; };
 		2E60F2851A6AEE6300C6A78B /* DXListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXListViewController.m; sourceTree = "<group>"; };
 		2E60F2871A6AEE8D00C6A78B /* DXListTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXListTableViewDataSource.h; sourceTree = "<group>"; };
@@ -72,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E50FAD11A7B27FB007505D5 /* CoreData.framework in Frameworks */,
 				711A506C19388095005642EF /* CoreGraphics.framework in Frameworks */,
 				711A506E19388095005642EF /* UIKit.framework in Frameworks */,
 				711A506A19388095005642EF /* Foundation.framework in Frameworks */,
@@ -122,6 +130,7 @@
 		711A506819388095005642EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2E50FAD01A7B27FB007505D5 /* CoreData.framework */,
 				711A506919388095005642EF /* Foundation.framework */,
 				711A506B19388095005642EF /* CoreGraphics.framework */,
 				711A506D19388095005642EF /* UIKit.framework */,
@@ -145,6 +154,9 @@
 				2EE8C6B41A661868001A444D /* DetailViewController.h */,
 				2EE8C6B51A661868001A444D /* DetailViewController.m */,
 				2EE8C6B61A661868001A444D /* DetailViewController.xib */,
+				2E50FACA1A7B277A007505D5 /* Stack.h */,
+				2E50FACB1A7B277A007505D5 /* Stack.m */,
+				2E50FACD1A7B279E007505D5 /* Model.xcdatamodeld */,
 				711A507B19388095005642EF /* Images.xcassets */,
 				711A507019388095005642EF /* Supporting Files */,
 			);
@@ -277,10 +289,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E50FACC1A7B277A007505D5 /* Stack.m in Sources */,
 				2E60F28D1A6AF1B400C6A78B /* Entry.m in Sources */,
 				2E60F2891A6AEE8D00C6A78B /* DXListTableViewDataSource.m in Sources */,
 				2E60F2861A6AEE6300C6A78B /* DXListViewController.m in Sources */,
 				711A507A19388095005642EF /* DXAppDelegate.m in Sources */,
+				2E50FACF1A7B279E007505D5 /* Model.xcdatamodeld in Sources */,
 				2E60F2901A6AF5EE00C6A78B /* EntryController.m in Sources */,
 				711A507619388095005642EF /* main.m in Sources */,
 				2EE8C6B71A661868001A444D /* DetailViewController.m in Sources */,
@@ -492,6 +506,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2E50FACD1A7B279E007505D5 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2E50FACE1A7B279E007505D5 /* Model.xcdatamodel */,
+			);
+			currentVersion = 2E50FACE1A7B279E007505D5 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 711A505E19388095005642EF /* Project object */;
 }
