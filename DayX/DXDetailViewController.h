@@ -8,12 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class Entry;
-
 static NSString * const EntryKey = @"entry";
+static NSString * const TitleKey = @"title";
+static NSString * const TextKey = @"text";
 
 @interface DetailViewController : UIViewController
-
-- (void)updateWithEntry:(Entry *)entry;
 
 @end

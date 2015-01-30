@@ -7,8 +7,12 @@
 //
 
 #import "DetailViewController.h"
+#import "EntryController.h"
 
 @interface DetailViewController () <UITextFieldDelegate, UITextViewDelegate>
+
+@property (nonatomic, strong) Entry *entry;
+
 @property (strong, nonatomic) IBOutlet UITextField *textBox;
 @property (strong, nonatomic) IBOutlet UITextView *contentBox;
 @property (nonatomic, strong) IBOutlet UIButton *clearButton;
@@ -17,34 +21,30 @@
 
 @implementation DetailViewController
 
-- (void)updateWithDictionary:(NSDictionary *)dictionary {
-    self.textBox.text = dictionary[TitleKey];
-    self.contentBox.text = dictionary[TextKey];
+- (void)updateWithEntry:(Entry *)entry {
+    self.entry = entry;
+    
+    self.textBox.text = entry.title;
+    self.contentBox.text = entry.content;
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.textBox.delegate = self;
     self.contentBox.delegate = self;
     
-    self.textBox.placeholder = @"Subject...";
+    self.textBox.text = self.entry.title;
+    self.contentBox.text = self.entry.content;
     
-    NSDictionary *entry = [[NSUserDefaults standardUserDefaults] objectForKey:EntryKey];
-    [self updateWithDictionary:entry];
-    
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"save" style:UIBarButtonItemStylePlain target:self action:@selector(save:)];
+    self.navigationItem.rightBarButtonItem = saveButton;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
-}
-
-- (void)textViewDidChange:(UITextView *)textView {
-    [self save:textView];
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    [self save:textField];
 }
 
 - (IBAction)clearButton:(id)sender {
@@ -54,15 +54,15 @@
 
 - (void)save:(id)sender {
     
-    NSDictionary *entry = @{TitleKey: self.textBox.text, TextKey: self.contentBox.text};
-    [[NSUserDefaults standardUserDefaults] setObject:entry forKey:EntryKey];
+    Entry *entry = [[Entry alloc] initWithDictionary:@{TitleKey: self.textBox.text, TextKey: self.contentBox.text}];
     
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if (self.entry) {
+        [[EntryController sharedInstance] replaceEntry:self.entry withEntry:entry];
+    } else {
+        [[EntryController sharedInstance] addEntries:entry];
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
