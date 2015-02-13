@@ -54,15 +54,19 @@
 
 - (void)save:(id)sender {
     
-    Entry *entry = [[Entry alloc] initWithDictionary:@{TitleKey: self.textBox.text, TextKey: self.contentBox.text}];
-    
-    if (self.entry) {
-        [[EntryController sharedInstance] replaceEntry:self.entry withEntry:entry];
+    if (!self.entry) {
+        [[EntryController sharedInstance] addEntryWithTitle:self.textBox.text andText:self.textBox.text];
     } else {
-        [[EntryController sharedInstance] addEntries:entry];
+        self.entry.title = self.textBox.text;
+        self.entry.content = self.contentBox.text;
+        self.entry.timestamp = [NSDate date];
+        
+        [[EntryController sharedInstance] synchronize];
     }
     
     [self.navigationController popViewControllerAnimated:YES];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

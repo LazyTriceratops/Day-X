@@ -10,6 +10,9 @@
 
 @interface DXListTableViewDataSource : NSObject <UITableViewDataSource>
 
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+
 - (void)registerTableView:(UITableView *)tableView;
+- (void)configureFetchedResultsController;
 
 @end

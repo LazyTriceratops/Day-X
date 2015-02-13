@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Model/Entry.h"
+#import "Entry.h"
 
 @interface EntryController : NSObject
 
@@ -15,8 +15,8 @@
 
 + (EntryController *)sharedInstance;
 
-- (void)addEntries:(Entry *)entry;
+- (void)addEntryWithTitle:(NSString *)title andText:(NSString *)text;
 - (void)removeEntry:(Entry *)entry;
 - (void)replaceEntry:(Entry *)oldEntry withEntry:(Entry *)newEntry;
-
+- (void)synchronize;
 @end

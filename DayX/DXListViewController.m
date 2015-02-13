@@ -34,6 +34,7 @@
     self.navigationItem.rightBarButtonItem = addButton;
     
     self.dataSource = [DXListTableViewDataSource new];
+    [self.dataSource configureFetchedResultsController];
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     [self.view addSubview:self.tableView];
@@ -48,7 +49,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     DetailViewController *detailViewController = [DetailViewController new];
-    [detailViewController updateWithEntry:[EntryController sharedInstance].entries[indexPath.row]];
+    [detailViewController updateWithEntry:self.dataSource.fetchedResultsController.fetchedObjects[indexPath.row]];
     [self.navigationController pushViewController:detailViewController animated:YES];
     
 }

@@ -10,9 +10,9 @@
 		2E50FACC1A7B277A007505D5 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E50FACB1A7B277A007505D5 /* Stack.m */; };
 		2E50FACF1A7B279E007505D5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E50FACD1A7B279E007505D5 /* Model.xcdatamodeld */; };
 		2E50FAD11A7B27FB007505D5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E50FAD01A7B27FB007505D5 /* CoreData.framework */; };
+		2E50FAD41A7B2ACA007505D5 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E50FAD31A7B2ACA007505D5 /* Entry.m */; };
 		2E60F2861A6AEE6300C6A78B /* DXListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E60F2851A6AEE6300C6A78B /* DXListViewController.m */; };
 		2E60F2891A6AEE8D00C6A78B /* DXListTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E60F2881A6AEE8D00C6A78B /* DXListTableViewDataSource.m */; };
-		2E60F28D1A6AF1B400C6A78B /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E60F28C1A6AF1B400C6A78B /* Entry.m */; };
 		2E60F2901A6AF5EE00C6A78B /* EntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E60F28F1A6AF5EE00C6A78B /* EntryController.m */; };
 		2EE8C6B71A661868001A444D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8C6B51A661868001A444D /* DetailViewController.m */; };
 		2EE8C6B81A661868001A444D /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EE8C6B61A661868001A444D /* DetailViewController.xib */; };
@@ -45,12 +45,12 @@
 		2E50FACB1A7B277A007505D5 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 		2E50FACE1A7B279E007505D5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		2E50FAD01A7B27FB007505D5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2E50FAD21A7B2ACA007505D5 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
+		2E50FAD31A7B2ACA007505D5 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 		2E60F2841A6AEE6300C6A78B /* DXListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXListViewController.h; sourceTree = "<group>"; };
 		2E60F2851A6AEE6300C6A78B /* DXListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXListViewController.m; sourceTree = "<group>"; };
 		2E60F2871A6AEE8D00C6A78B /* DXListTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXListTableViewDataSource.h; sourceTree = "<group>"; };
 		2E60F2881A6AEE8D00C6A78B /* DXListTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXListTableViewDataSource.m; sourceTree = "<group>"; };
-		2E60F28B1A6AF1B400C6A78B /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
-		2E60F28C1A6AF1B400C6A78B /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 		2E60F28E1A6AF5EE00C6A78B /* EntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryController.h; sourceTree = "<group>"; };
 		2E60F28F1A6AF5EE00C6A78B /* EntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryController.m; sourceTree = "<group>"; };
 		2EE8C6B41A661868001A444D /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -99,15 +99,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E60F28A1A6AF1B400C6A78B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2E60F28B1A6AF1B400C6A78B /* Entry.h */,
-				2E60F28C1A6AF1B400C6A78B /* Entry.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		711A505D19388095005642EF = {
 			isa = PBXGroup;
 			children = (
@@ -142,7 +133,6 @@
 		711A506F19388095005642EF /* DayX */ = {
 			isa = PBXGroup;
 			children = (
-				2E60F28A1A6AF1B400C6A78B /* Model */,
 				711A507819388095005642EF /* DXAppDelegate.h */,
 				711A507919388095005642EF /* DXAppDelegate.m */,
 				2E60F28E1A6AF5EE00C6A78B /* EntryController.h */,
@@ -157,6 +147,8 @@
 				2E50FACA1A7B277A007505D5 /* Stack.h */,
 				2E50FACB1A7B277A007505D5 /* Stack.m */,
 				2E50FACD1A7B279E007505D5 /* Model.xcdatamodeld */,
+				2E50FAD21A7B2ACA007505D5 /* Entry.h */,
+				2E50FAD31A7B2ACA007505D5 /* Entry.m */,
 				711A507B19388095005642EF /* Images.xcassets */,
 				711A507019388095005642EF /* Supporting Files */,
 			);
@@ -290,9 +282,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E50FACC1A7B277A007505D5 /* Stack.m in Sources */,
-				2E60F28D1A6AF1B400C6A78B /* Entry.m in Sources */,
 				2E60F2891A6AEE8D00C6A78B /* DXListTableViewDataSource.m in Sources */,
 				2E60F2861A6AEE6300C6A78B /* DXListViewController.m in Sources */,
+				2E50FAD41A7B2ACA007505D5 /* Entry.m in Sources */,
 				711A507A19388095005642EF /* DXAppDelegate.m in Sources */,
 				2E50FACF1A7B279E007505D5 /* Model.xcdatamodeld in Sources */,
 				2E60F2901A6AF5EE00C6A78B /* EntryController.m in Sources */,
